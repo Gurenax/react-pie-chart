@@ -6,43 +6,40 @@ import PieChart from './components/PieChart'
 
 class App extends Component {
   render() {
-    const data = {
+    const chartData = {
       datasets: [{
         data: [
-          10,
           20,
-          30,
-          40,
-          50,
+          10,
+          30
         ],
         backgroundColor: [
-          '#FF0000', // red
-          '#FFA500', // orange
-          '#FFFF00', // yellow
-          '#008000', // green
-          '#0000FF', // blue
+          '#0090D3', // Green
+          'red', // Red
+          '#E2E2E2' // yellow
         ],
-        label: 'Dataset 1'
+        label: 'Dataset 1',
       }],
       labels: [
-        "Red",
-        "Orange",
-        "Yellow",
-        "Green",
-        "Blue"
+        "OK",
+        "Not OK",
+        "Has not Responded",
       ]
     }
 
-    const options = {
+    const chartOptions = {
       responsive: true
+      // legend: {
+      //   position: 'bottom'
+      // }
     }
 
     return (
       <div className="App">
         <h1>React Pie Chart</h1>
-        <PieChart data={data} options={options} />
+        <PieChart data={chartData} options={chartOptions} />
       </div>
-    );
+    )
   }
 }
 
